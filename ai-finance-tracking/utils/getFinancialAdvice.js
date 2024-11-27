@@ -45,8 +45,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Initialize the Gemini API client with your API key
-const genAI = new GoogleGenerativeAI("AIzaSyDe2IPXV3hR2FCyRcFvyqdLJ4BPlUMttQE");  // Replace with your actual Gemini API key
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });  // Specify the Gemini model
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);   
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });  
 
 // Function to generate personalized financial advice
 const getFinancialAdvice = async (totalBudget, totalIncome, totalSpend) => {
